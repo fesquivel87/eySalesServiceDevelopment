@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Input_Summary__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Identify any data input by the users. What are the fields/data elements that must be captured? (Feel free to provide this as an attachment, if needed)</inlineHelpText>
+    <label>Input Summary</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

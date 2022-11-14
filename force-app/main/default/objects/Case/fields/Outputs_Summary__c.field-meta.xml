@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outputs_Summary__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Identify data output by the system or the users. After the system processes the information, what should the users expect to see as an output? (e.g. Fields on a page, Report, Dashboards, Email, excel output, etc.)</inlineHelpText>
+    <label>Outputs Summary</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

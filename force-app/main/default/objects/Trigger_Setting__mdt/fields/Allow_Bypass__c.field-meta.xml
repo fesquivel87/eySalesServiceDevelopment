@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Bypass__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Should the triggers utilize the trigger bypass logic.  If this is unchecked, the bypass logic will be ignored regardless of additional configuration.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Should the triggers utilize the trigger bypass logic?</inlineHelpText>
+    <label>Allow Bypass</label>
+    <type>Checkbox</type>
+</CustomField>

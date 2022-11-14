@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trigger_Handler__c</fullName>
+    <description>The trigger handler that should be bypassed</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The trigger handler that should be bypassed</inlineHelpText>
+    <label>Trigger Handler</label>
+    <referenceTo>Trigger_Handler__mdt</referenceTo>
+    <relationshipName>Trigger_Handler_Bypasses</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

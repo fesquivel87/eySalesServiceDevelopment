@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_test_script_is_this_related_to__c</fullName>
+    <externalId>false</externalId>
+    <label>Which test script is this related to?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account</fullName>
+                <default>false</default>
+                <label>Account</label>
+            </value>
+            <value>
+                <fullName>Contacts</fullName>
+                <default>false</default>
+                <label>Contacts</label>
+            </value>
+            <value>
+                <fullName>External Experience</fullName>
+                <default>false</default>
+                <label>External Experience</label>
+            </value>
+            <value>
+                <fullName>Not in a test script</fullName>
+                <default>false</default>
+                <label>Not in a test script</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

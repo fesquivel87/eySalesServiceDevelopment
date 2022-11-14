@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>52.0</apiVersion>
+    <choices>
+        <name>choiceDataIssue</name>
+        <choiceText>Data Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Data Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choiceIssueDefect</name>
+        <choiceText>Issue/Defect</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Issue/Defect</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choiceSuggestionRequest</name>
+        <choiceText>Suggestion/Request</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Suggestion/Request</stringValue>
+        </value>
+    </choices>
+    <description>Screen flow used to open defect/suggestion Cases</description>
+    <dynamicChoiceSets>
+        <name>choiceTestScript</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Which_test_script_is_this_related_to__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>picklistPriority</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Priority</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>Open Defect/Suggestion Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Open Defect/Suggestion Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Insert_Case_Record</name>
+        <label>Insert Case Record</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <connector>
+            <targetReference>ScreenDocumentUpload</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>Description</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <elementReference>Priority</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Provide_the_link_of_the_issue__c</field>
+            <value>
+                <elementReference>Provide_the_link_to_the_issue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reason</field>
+            <value>
+                <elementReference>CaseReason</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Case_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>What_test_script_step_is_this__c</field>
+            <value>
+                <elementReference>What_test_script_step_is_this</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Which_test_script_is_this_related_to__c</field>
+            <value>
+                <elementReference>Which_test_script_is_this_related_to</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Get record type for &apos;Defect / Suggestion&apos;</description>
+        <name>Get_Case_Record_Type</name>
+        <label>Get Case Record Type</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Insert_Case_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Defect_Suggestion</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>ConfirmationScreen</name>
+        <label>Confirmation</label>
+        <locationX>176</locationX>
+        <locationY>638</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Confirmation</name>
+            <fieldText>&lt;p&gt;Thank you for sharing your feedback! A Case has been successfully opened. &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Screen1</name>
+        <label>Collect Case Details</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Case_Record_Type</targetReference>
+        </connector>
+        <fields>
+            <name>Instructions</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Use this form to log a Salesforce issue/defect, data issue, or suggestion/request.&lt;/b&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Priority</name>
+            <choiceReferences>picklistPriority</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Priority</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>CaseReason</name>
+            <choiceReferences>choiceIssueDefect</choiceReferences>
+            <choiceReferences>choiceDataIssue</choiceReferences>
+            <choiceReferences>choiceSuggestionRequest</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Which_test_script_is_this_related_to</name>
+            <choiceReferences>choiceTestScript</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Which test script is this related to?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>What_test_script_step_is_this</name>
+            <dataType>String</dataType>
+            <fieldText>What test script step is this?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Response cannot exceed 255 characters&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!What_test_script_step_is_this}) &lt; 255</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Provide_the_link_to_the_issue</name>
+            <dataType>String</dataType>
+            <fieldText>Provide the link to the issue:</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 11pt;&quot;&gt;Please provide the link where you experienced the issue.&lt;/span&gt;&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Subject</name>
+            <dataType>String</dataType>
+            <fieldText>Provide a summary of your issue or suggestion:</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Please use 80 characters or less&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;Response cannot exceed 80 characters&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!Subject}) &lt; 81</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Description</name>
+            <fieldText>Describe your problem or feature request in detail:</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>ScreenDocumentUpload</name>
+        <label>File Upload</label>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>ConfirmationScreen</targetReference>
+        </connector>
+        <fields>
+            <name>FileUpload</name>
+            <extensionName>forceContent:fileUpload</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Please attach any examples or supporting documents</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>Insert_Case_Record</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Screen1</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

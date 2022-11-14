@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_and_Access__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>1. Identify all User Roles involved in this process (Identify the Roles owning/initiating, supporting, or informed by the process/requirement)
+
+2. Should these User Roles be able to Create and Edit, View Only, or No Visibility) ?</inlineHelpText>
+    <label>Users and Access</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

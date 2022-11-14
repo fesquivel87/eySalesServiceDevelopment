@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provide_the_link_of_the_issue__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide the link where you experienced the issue.</inlineHelpText>
+    <label>Provide the link of the issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

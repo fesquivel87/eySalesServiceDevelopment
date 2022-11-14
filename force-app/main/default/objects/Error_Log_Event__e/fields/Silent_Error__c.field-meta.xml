@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Silent_Error__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, this error was thrown without the user or automated process from being notified.</description>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Silent Error</label>
+    <type>Checkbox</type>
+</CustomField>

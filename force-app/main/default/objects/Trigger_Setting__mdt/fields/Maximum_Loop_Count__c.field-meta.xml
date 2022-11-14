@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Loop_Count__c</fullName>
+    <defaultValue>5</defaultValue>
+    <description>The maximum number of times that the trigger log can be executed in the same transaction.  If set to 0, the trigger will execute without limit.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>How many times can the trigger logic be executed?</inlineHelpText>
+    <label>Maximum Loop Count</label>
+    <precision>2</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
